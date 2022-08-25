@@ -1,0 +1,341 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  font-size: 62.5%;
+}
+
+.main-video {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+video {
+  width: 100%;
+  height: 100%;
+  box-sizing: cover;
+  overflow: hidden;
+}
+.play-pause-central {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  opacity: 0;
+}
+
+.play-pause-central.animation1 {
+  animation-name: aparicion;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(.17,.67,.73,1.02);
+  animation-iteration-count: 1;
+}
+
+.play-pause-central.animation2 {
+  animation-name: aparicion;
+  animation-duration: 0.4s;
+  animation-timing-function: cubic-bezier(.17,.67,.73,1.02);
+  animation-iteration-count: 1;
+}
+@keyframes aparicion {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  75% {
+    opacity: 0.25;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.play-pause-central img {
+  width: 100%;
+  opacity: 0.2;
+}
+.media-controls {
+  position: absolute;
+  bottom: 0px;
+  width: 100vw;
+  display: grid;
+  grid-template-rows: 5px 40px;
+  gap: 10px;
+  opacity: 1;
+  transition: opacity 0.5s;
+  -webkit-transition: opacity 0.5s;
+  -moz-transition: opacity 0.5s;
+  -ms-transition: opacity 0.5s;
+  -o-transition: opacity 0.5s;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.media-controls__active {
+  opacity: 0;
+  transition: opacity 0.2s;
+  transition-delay: 0.3s;
+}
+.media-controls.media-controls__active:hover {
+  opacity: 1;
+}
+.media-controls .time-wrapper {
+  background-color: rgba(146, 146, 146, 0.082);
+  cursor: pointer;
+}
+
+.media-controls .time-wrapper .time-bar {
+  position: relative;
+  height: 100%;
+  width: 1px;
+  background-color: rgb(0, 21, 97);
+  cursor: pointer;
+  overflow: visible;
+}
+
+.media-controls .time-wrapper .time-bar .ball {
+  position: absolute;
+  right: -3px;
+  bottom: -3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  background-color: rgb(0, 21, 97);
+  overflow: visible;
+}
+
+.media-controls__buttons {
+  padding: 0px 20px 0px 20px;
+  align-self: center;
+  display: grid;
+  grid-template-columns: repeat(3, 24px) 140px 1fr repeat(2, 24px);
+  gap: 20px;
+  color: #ffffff;
+}
+
+.media-controls__buttons img {
+  width: 20px;
+}
+
+.playButton,
+.rewindButton,
+.forwardButton,
+.fullscreenButton {
+  cursor: pointer;
+}
+
+.time {
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  font-size: 0.8rem;
+}
+
+.soundControls {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.soundBar[type="range"] {
+  width: 100%;
+  margin: 0px 5px;
+  background-color: transparent;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+.soundBar[type="range"]:focus {
+  outline: none;
+}
+.soundBar[type="range"]::-webkit-slider-runnable-track {
+  background: #6e6e6e;
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  opacity: 0.5;
+  transition: opacity 0.2s;
+  -webkit-transition: opacity 0.2s;
+  -moz-transition: opacity 0.2s;
+  -ms-transition: opacity 0.2s;
+  -o-transition: opacity 0.2s;
+}
+.soundBar[type="range"]::-webkit-slider-thumb {
+  margin-top: -2.5px;
+  width: 10px;
+  height: 10px;
+  background: rgb(0, 21, 97);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  -webkit-appearance: none;
+}
+.soundBar[type="range"]:hover::-webkit-slider-runnable-track {
+  opacity: 1;
+}
+.soundBar[type="range"]::-moz-range-track {
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 25px;
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+}
+.soundBar[type="range"]::-moz-range-thumb {
+  width: 10px;
+  height: 10px;
+  background: rgba(0, 0, 92, 0.9);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.soundBar[type="range"]::-ms-track {
+  background: transparent;
+  border-color: transparent;
+  border-width: 10.4px 0;
+  color: transparent;
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+}
+.soundBar[type="range"]::-ms-fill-lower {
+  background: #000000;
+  border: 0;
+  border-radius: 50px;
+}
+.soundBar[type="range"]::-ms-fill-upper {
+  background: rgba(0, 0, 0, 0.3);
+  border: 0;
+  border-radius: 50px;
+}
+.soundBar[type="range"]::-ms-thumb {
+  width: 20px;
+  height: 20px;
+  background: rgba(0, 25, 92, 0.9);
+  border: 0;
+  border-radius: 50px;
+  cursor: pointer;
+  margin-top: 0px;
+  /*Needed to keep the Edge thumb centred*/
+}
+.soundBar[type="range"]:focus::-ms-fill-lower {
+  background: rgba(0, 0, 0, 0.3);
+}
+.soundBar[type="range"]:focus::-ms-fill-upper {
+  background: #6e6e6e;
+}
+
+.speed-container {
+  position: relative;
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.speed-options {
+  position: absolute;
+  bottom: 60px;
+  right: 0px;
+  width: 200px;
+  height: fit-content;
+  display: none;
+  flex-direction: column;
+  justify-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.speed-options .option {
+  height: 50px;
+  padding: 10px 5px 10px 24px;
+  color: white;
+  line-height: 30px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.speed-options .option:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.speedButton.active {
+  transform: rotate(25deg);
+  -webkit-transform: rotate(25deg);
+  -moz-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -o-transform: rotate(25deg);
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+
+.rewindButton,
+.forwardButton {
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}
+
+.rewindButton:active {
+  transform: rotate(-25deg);
+  -webkit-transform: rotate(-25deg);
+  -moz-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  -o-transform: rotate(-25deg);
+}
+
+.forwardButton:active {
+  transform: rotate(25deg);
+  -webkit-transform: rotate(25deg);
+  -moz-transform: rotate(25deg);
+  -ms-transform: rotate(25deg);
+  -o-transform: rotate(25deg);
+}
+
+.speedButton.active:active {
+  transform: rotate(-25deg);
+  -webkit-transform: rotate(-25deg);
+  -moz-transform: rotate(-25deg);
+  -ms-transform: rotate(-25deg);
+  -o-transform: rotate(-25deg);
+  transition: transform 0.2s;
+  -webkit-transition: transform 0.2s;
+  -moz-transition: transform 0.2s;
+  -ms-transition: transform 0.2s;
+  -o-transition: transform 0.2s;
+}

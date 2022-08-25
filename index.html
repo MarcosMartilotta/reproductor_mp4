@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <section class="main-video">
+        <div class="play-pause-central">
+            <img id="centralButton" src="" alt="play-pause-central">
+        </div>
+        <video src="./assets/videos/surf.mp4"></video>  
+        <section class="media-controls media-controls__active">
+            <div class="time-wrapper">
+                <div class="time-bar">
+                    <div class="ball"></div>
+                </div>
+            </div>
+            <div class="media-controls__buttons">
+                <span><img class="playButton" src="./assets/icons/play-button.png" alt="play video"></span>
+                <span><img class="rewindButton" src="./assets/icons/rewind.png" alt="rewind 15 seconds"></span>
+                <span><img class="forwardButton" src="./assets/icons/fast-forward.png" alt="advance 15 seconds "></span>
+                <span class="soundControls">
+                    <img class="soundButton" src="./assets/icons/medium-volume.png" alt="max sound">
+                    <input class="soundBar" type="range" step="0.01" >
+                </span>
+                <span class="time">00:00</span>
+                <span class="speed-container">
+                <img class="speedButton" src="./assets/icons/playback-speed.png" alt="video speed">
+                <div class="speed-options">
+                    <div class="option" id="option 1">1.75</div>
+                    <div class="option" id="option 2">1.5</div>
+                    <div class="option" id="option 3">Normal</div>
+                    <div class="option" id="option 4">0.5</div>
+                    <div class="option" id="option 5">0.25</div>
+                </div>
+                </span>
+                <span><img class="fullscreenButton" src="./assets/icons/fullscreen.png" alt="minimize"></span>
+            </div>
+        </section>
+    </section>
+    <script type="text/javascript" src="./js/index.js"></script>
+</body>
+</html>
